@@ -4,7 +4,7 @@ function Car(make, model) {
 }
 
 Car.prototype.getMakeModel = function() {
-    return this.make + " " + this.model;
+    return `${this.make} ${this.model}`;
 };
 
 function SportsCar(make, model, topSpeed) {
@@ -13,17 +13,17 @@ function SportsCar(make, model, topSpeed) {
 }
 
 SportsCar.prototype = Object.create(Car.prototype);
+SportsCar.prototype.constructor = SportsCar;
 
 SportsCar.prototype.getTopSpeed = function() {
     return this.topSpeed;
 };
+const sc = new SportsCar("Ferrari", "Testarossa", 200);
+
+console.log(sc.make);      // Ferrari
+console.log(sc.model);     // Testarossa
+console.log(sc.topSpeed);  // 200
 
 // Do not change the code below
 window.Car = Car;
 window.SportsCar = SportsCar;
-
-// Do not change the code below
-window.Car = Car;
-window.SportsCar = SportsCar;on SportsCar(make, model, topSpeed) {}
-
-
